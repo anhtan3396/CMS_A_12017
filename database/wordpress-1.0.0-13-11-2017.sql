@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 13, 2017 at 04:02 AM
+-- Generation Time: Nov 13, 2017 at 04:15 AM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -121,8 +121,8 @@ CREATE TABLE IF NOT EXISTS `wp_options` (
 --
 
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(1, 'siteurl', 'http://localhost:82/CMS_A_12017/wordpress/', 'yes'),
-(2, 'home', 'http://localhost:82/CMS_A_12017/wordpress/', 'yes'),
+(1, 'siteurl', 'http://localhost:82/CMS_A_12017/', 'yes'),
+(2, 'home', 'http://localhost:82/CMS_A_12017/', 'yes'),
 (3, 'blogname', 'WordPress Training 4.8.3', 'yes'),
 (4, 'blogdescription', 'Just another WordPress site', 'yes'),
 (5, 'users_can_register', '0', 'yes'),
@@ -438,7 +438,7 @@ INSERT INTO `wp_usermeta` (`umeta_id`, `user_id`, `meta_key`, `meta_value`) VALU
 (13, 1, 'dismissed_wp_pointers', ''),
 (14, 1, 'show_welcome_panel', '1'),
 (16, 1, 'wp_dashboard_quick_press_last_post_id', '3'),
-(17, 1, 'session_tokens', 'a:2:{s:64:"fa67a037d1f5e0b35cbc552e97e5e0dcc185ac39b9061795dc116ee11c763742";a:4:{s:10:"expiration";i:1510712685;s:2:"ip";s:3:"::1";s:2:"ua";s:113:"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36";s:5:"login";i:1510539885;}s:64:"9d37009e9512e9fd59752211a54384fcfc617f8da0e14b685d37d0226949c9d6";a:4:{s:10:"expiration";i:1510714861;s:2:"ip";s:3:"::1";s:2:"ua";s:113:"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36";s:5:"login";i:1510542061;}}');
+(17, 1, 'session_tokens', 'a:3:{s:64:"fa67a037d1f5e0b35cbc552e97e5e0dcc185ac39b9061795dc116ee11c763742";a:4:{s:10:"expiration";i:1510712685;s:2:"ip";s:3:"::1";s:2:"ua";s:113:"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36";s:5:"login";i:1510539885;}s:64:"9d37009e9512e9fd59752211a54384fcfc617f8da0e14b685d37d0226949c9d6";a:4:{s:10:"expiration";i:1510714861;s:2:"ip";s:3:"::1";s:2:"ua";s:113:"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36";s:5:"login";i:1510542061;}s:64:"4bdbb0445d00230b62d0f164682ef2b5abf36587ce070e2a9b46aa15f312a222";a:4:{s:10:"expiration";i:1510715691;s:2:"ip";s:3:"::1";s:2:"ua";s:113:"Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.79 Safari/537.36";s:5:"login";i:1510542891;}}');
 
 -- --------------------------------------------------------
 
