@@ -30,9 +30,9 @@ get_header(); ?>
 			<h1 class="page-title"><?php single_post_title(); ?></h1>
 		</header>
 	<?php else : ?>
-	<header class="page-header">
-		<h2 class="page-title"><?php _e( 'Posts', 'twentyseventeen' ); ?></h2>
-	</header>
+		<header class="page-header">
+			<h2 class="page-title"><?php _e( 'Posts', 'twentyseventeen' ); ?></h2>
+		</header>
 	<?php endif; ?>
 
 	<div id="primary" class="content-area ">
@@ -42,7 +42,7 @@ get_header(); ?>
 			if ( have_posts() ) :
 
 				/* Start the Loop */
-				while ( have_posts() ) : the_post();
+			while ( have_posts() ) : the_post();
 
 					/*
 					 * Include the Post-Format-specific template for the content.
@@ -51,53 +51,53 @@ get_header(); ?>
 					 */
 					get_template_part( 'template-parts/post/content', get_post_format() );
 
-				endwhile;
+					endwhile;
 
-				the_posts_pagination( array(
-					'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
-					'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
-					'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
-				) );
+					the_posts_pagination( array(
+						'prev_text' => twentyseventeen_get_svg( array( 'icon' => 'arrow-left' ) ) . '<span class="screen-reader-text">' . __( 'Previous page', 'twentyseventeen' ) . '</span>',
+						'next_text' => '<span class="screen-reader-text">' . __( 'Next page', 'twentyseventeen' ) . '</span>' . twentyseventeen_get_svg( array( 'icon' => 'arrow-right' ) ),
+						'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'twentyseventeen' ) . ' </span>',
+						) );
 
-			else :
+					else :
 
-				get_template_part( 'template-parts/post/content', 'none' );
+						get_template_part( 'template-parts/post/content', 'none' );
 
-			endif;
-			?>
+					endif;
+					?>
 
-		</main><!-- #main -->
+				</main><!-- #main -->
 
-		<main id="main" class="site-main" role="main" >
+				<main id="main" class="site-main" role="main" >
 
-			<?php
-				$pages = get_pages(); 
-				/* Start the Loop */
-				foreach ($pages as $page_data) {
-				  ?>
-				  	<article id="post-<?php echo $page_data->ID; ?>" <?php post_class(); ?> style="width:50%;float:left;">
-	<header class="entry-header">
-		<h1 class="entry-title"><a href=<?php echo get_page_link($page_data->ID); ?>><?php echo $page_data->post_title;?></a></h1>
-		<?php twentyseventeen_edit_link( $page_data->ID ); ?>
-	</header><!-- .entry-header -->
-	<div class="entry-content">
-		<?php
-			echo $page_data->post_content;
-			?>
+					<?php
+					$pages = get_pages(); 
+					/* Start the Loop */
+					foreach ($pages as $page_data) {
+						?>
+						<article id="post-<?php echo $page_data->ID; ?>" <?php post_class(); ?> style="width:50%;float:left;">
+							<header class="entry-header">
+								<h1 class="entry-title"><a href=<?php echo get_page_link($page_data->ID); ?>><?php echo $page_data->post_title;?></a></h1>
+								<?php twentyseventeen_edit_link( $page_data->ID ); ?>
+							</header><!-- .entry-header -->
+							<div class="entry-content">
+								<?php
+								echo $page_data->post_content;
+								?>
 
-			<?php
-			
-		?>
-	</div><!-- .entry-content -->
-</article><!-- #post-## -->
+								<?php
+								
+								?>
+							</div><!-- .entry-content -->
+						</article><!-- #post-## -->
 
-				  <?php
-				}
-			?>
+						<?php
+					}
+					?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-	<?php get_sidebar(); ?>
-</div><!-- .wrap -->
+				</main><!-- #main -->
+			</div><!-- #primary -->
+			<?php get_sidebar(); ?>
+		</div><!-- .wrap -->
 
-<?php get_footer();
+		<?php get_footer();

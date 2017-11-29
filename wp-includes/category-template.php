@@ -1034,7 +1034,28 @@ function walk_category_tree() {
 	} else {
 		$walker = $args[2]['walker'];
 	}
+
+	$categories = [];
+	foreach ($args[0] as $category) {
+		if (count($categories) < 3 && $category->parent == 0) {
+			$categories[] = $category;
+		}
+	}
+
+	$sub_cate = [];
+	foreach ($categories as $parent) {
+		$index = 0;
+		foreach ($args[0] as $category) {
+			if ($index < 3 && $parent->term_id == $category->parent) {
+				$index++;
+				$sub_cate[]= $category;
+			}
+		}
+	}
+	$categories = array_merge($categories,$sub_cate);
+	$args[0] = $categories;
 	return call_user_func_array( array( $walker, 'walk' ), $args );
+
 }
 
 /**

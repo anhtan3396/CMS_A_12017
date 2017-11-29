@@ -186,6 +186,7 @@ class Walker_Category extends Walker {
 						$_current_term = get_term( $_current_term->parent, $category->taxonomy );
 					}
 				}
+				
 			}
 
 			/**
