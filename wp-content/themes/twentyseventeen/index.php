@@ -77,12 +77,16 @@ get_header(); ?>
 				  ?>
 				  	<article id="post-<?php echo $page_data->ID; ?>" <?php post_class(); ?> style="width:50%;float:left;">
 	<header class="entry-header">
-		<h1 class="entry-title"><?php echo $page_data->post_title;?></h1>
+		<h1 class="entry-title"><a href=<?php echo get_page_link($page_data->ID); ?>><?php echo $page_data->post_title;?></a></h1>
 		<?php twentyseventeen_edit_link( $page_data->ID ); ?>
 	</header><!-- .entry-header -->
 	<div class="entry-content">
 		<?php
 			echo $page_data->post_content;
+			?>
+
+			<?php
+			
 		?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->
