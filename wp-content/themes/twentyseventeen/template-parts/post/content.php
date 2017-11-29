@@ -12,9 +12,10 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?> style="width:50%;float:left;">
 	<?php
 	if ( is_sticky() && is_home() ) :
+		
 		echo twentyseventeen_get_svg( array( 'icon' => 'thumb-tack' ) );
 	endif;
 	?>

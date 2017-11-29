@@ -16,6 +16,13 @@
  */
 
 get_header(); ?>
+<style>
+	.col-md-6 {
+		width: 50%;
+		float:left;
+	}
+
+</style>
 
 <div class="wrap">
 	<?php if ( is_home() && ! is_front_page() ) : ?>
@@ -28,8 +35,8 @@ get_header(); ?>
 	</header>
 	<?php endif; ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	<div id="primary" class="content-area ">
+		<main id="main" class="site-main" role="main" >
 
 			<?php
 			if ( have_posts() ) :
@@ -57,6 +64,31 @@ get_header(); ?>
 				get_template_part( 'template-parts/post/content', 'none' );
 
 			endif;
+			?>
+
+		</main><!-- #main -->
+
+		<main id="main" class="site-main" role="main" >
+
+			<?php
+				$pages = get_pages(); 
+				/* Start the Loop */
+				foreach ($pages as $page_data) {
+				  ?>
+				  	<article id="post-<?php echo $page_data->ID; ?>" <?php post_class(); ?> style="width:50%;float:left;">
+	<header class="entry-header">
+		<h1 class="entry-title"><?php echo $page_data->post_title;?></h1>
+		<?php twentyseventeen_edit_link( $page_data->ID ); ?>
+	</header><!-- .entry-header -->
+	<div class="entry-content">
+		<?php
+			echo $page_data->post_content;
+		?>
+	</div><!-- .entry-content -->
+</article><!-- #post-## -->
+
+				  <?php
+				}
 			?>
 
 		</main><!-- #main -->
