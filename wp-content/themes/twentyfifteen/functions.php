@@ -370,6 +370,7 @@ function twentyfifteen_nav_description( $item_output, $item, $depth, $args ) {
 
 	return $item_output;
 }
+
 add_filter( 'walker_nav_menu_start_el', 'twentyfifteen_nav_description', 10, 4 );
 
 /**

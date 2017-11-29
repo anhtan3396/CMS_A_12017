@@ -284,9 +284,17 @@ function wp_dashboard_right_now() {
 		?>
 		<li class="comment-mod-count<?php
 			if ( ! $num_comm->moderated ) {
-				echo ' hidden';
+				
 			}
-		?>"><a href="edit-comments.php?comment_status=moderated" aria-label="<?php esc_attr_e( $aria_label ); ?>"><?php echo $text; ?></a></li>
+		?>"><a href="users.php" aria-label="<?php esc_attr_e( $aria_label ); ?>"><?php echo(count_users()["total_users"]); ?>
+ 			<?php
+ 				if (count_users()["total_users"] >= 2) {
+ 					echo "Users";
+ 				}else 
+ 					echo "User";
+ 		 ?>
+ 
+ 		</a></li>
 		<?php
 	}
 
