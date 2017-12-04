@@ -108,15 +108,5 @@ if ( function_exists('get_site_option') ) {
 
 <div class="clear"></div></div><!-- wpwrap -->
 <script type="text/javascript">if(typeof wpOnload=='function')wpOnload();</script>
-<script type="text/javascript">
-	jQuery(document).ready(function ($) {
-    $("#contextual-help-link").click(function () {
-        $("#contextual-help-wrap").css("cssText", "display: block !important;");
-    });
-    $("#show-settings-link").click(function () {
-        $("#screen-options-wrap").css("cssText", "display: block !important;");
-    });
-})
-</script>
 </body>
 </html>
