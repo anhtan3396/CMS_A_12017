@@ -266,8 +266,8 @@ if ( post_type_supports( $post_type, 'page-attributes' ) || count( get_page_temp
 if ( $thumbnail_support && current_user_can( 'upload_files' ) )
 	add_meta_box('postimagediv', esc_html( $post_type_object->labels->featured_image ), 'post_thumbnail_meta_box', null, 'side', 'low');
 
-if ( post_type_supports($post_type, 'excerpt') )
-	add_meta_box('postexcerpt', __('Excerpt'), 'post_excerpt_meta_box', null, 'normal', 'core');
+if ( post_type_supports('post', 'excerpt') )
+	add_meta_box('postexcerpt', __('OverView'), 'post_excerpt_meta_box', null, 'normal', 'core');
 
 if ( post_type_supports($post_type, 'trackbacks') )
 	add_meta_box('trackbacksdiv', __('Send Trackbacks'), 'post_trackback_meta_box', null, 'normal', 'core');
@@ -558,9 +558,16 @@ do_action( 'edit_form_top', $post ); ?>
 	 * @param WP_Post $post Post object.
 	 */
 	$title_placeholder = apply_filters( 'enter_title_here', __( 'Enter title here' ), $post );
+
+	
 	?>
 	<label class="screen-reader-text" id="title-prompt-text" for="title"><?php echo $title_placeholder; ?></label>
+
 	<input type="text" name="post_title" size="30" value="<?php echo esc_attr( $post->post_title ); ?>" id="title" spellcheck="true" autocomplete="off" />
+
+
+	
+
 </div>
 <?php
 /**
