@@ -953,8 +953,9 @@ class WP_Posts_List_Table extends WP_List_Table {
 			$post_type_object = get_post_type_object( $post->post_type );
 			echo ' | ' . $post_type_object->labels->parent_item_colon . ' ' . esc_html( $parent_name );
 		}
-		echo "</strong>\n";
 
+		echo "</strong>\n";
+		echo $post->post_excerpt;
 		if ( ! is_post_type_hierarchical( $this->screen->post_type ) && 'excerpt' === $mode && current_user_can( 'read_post', $post->ID ) ) {
 			echo esc_html( get_the_excerpt() );
 		}
@@ -1122,6 +1123,7 @@ class WP_Posts_List_Table extends WP_List_Table {
 				echo join( __( ', ' ), $out );
 			} else {
 				echo '<span aria-hidden="true">&#8212;</span><span class="screen-reader-text">' . $taxonomy_object->labels->no_terms . '</span>';
+
 			}
 			return;
 		}

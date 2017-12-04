@@ -1111,6 +1111,7 @@ class WP_List_Table {
 				$class = "class='" . join( ' ', $class ) . "'";
 
 			echo "<$tag $scope $id $class>$column_display_name</$tag>";
+			
 		}
 	}
 
